@@ -7,7 +7,7 @@ Original copyright:
 Copyright 2022 schwede
 
 Modifications and newly added SEBA-related modules:
-Copyright 2026 ZYS
+Copyright 2026 fanyuliuhua
 
 Major modifications include SEBA-related similarity-matrix refinement,
 bidirectional Z-score normalization, alignment-aware smoothing, and
