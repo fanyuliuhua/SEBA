@@ -11,3 +11,10 @@ structural similarity. Thus, SEBA provides an effective and computationally simp
 ## Method
 ![image](https://github.com/fanyuliuhua/SEBA/blob/master/plot/Overview%20of%20the%20SEBA%20framework%20for%20sequence-only%20remote%20homology%20alignment.png)
 ###### Figure 1. Overview of the SEBA framework for sequence-only remote homology alignment. SEBA extracts residue-level embeddings from two input protein sequences using a pre-trained protein language model and constructs an embedding-derived residue–residue similarity matrix, which is subsequently refined by bidirectional Z-score normalization. The normalized matrix is then processed using diagonal-directed local averaging, in which each internal element is iteratively updated based on its own value and those of its two adjacent diagonal neighbors. This smoothing procedure reinforces locally continuous homologous signals and suppresses isolated noisy responses. The resulting refined similarity matrix is finally used as the scoring matrix for dynamic programming to infer the residue-level alignment.
+## Installing Requirements
+Install SEBA through conda:
+```
+git clone https://github.com/fanyuliuhua/SEBA.git
+cd SEBA
+conda create --name <env> --file <this file>
+```
