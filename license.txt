@@ -7,7 +7,7 @@ Original copyright:
 Copyright 2022 schwede
 
 Modifications and newly added SEBA-related modules:
-Copyright 2026 ZYS
+Copyright 2026 fanyuliuhua
 
 Major modifications include SEBA-related similarity-matrix refinement,
 bidirectional Z-score normalization, alignment-aware smoothing, and
@@ -202,7 +202,7 @@ The following is the full text of the Apache License, Version 2.0.
       page" as the copyright notice for easier identification within
       third-party archives.
 
-   Copyright 2026 ZYS
+   Copyright 2026 fanyuliuhua
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
