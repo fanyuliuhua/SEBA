@@ -117,7 +117,7 @@ def draw_top_panel(ax, values, title, show_ylabels=False):
     for i, v in enumerate(values):
         label_weight = "bold" if i == len(values) - 1 else "normal"
         ax.text(
-            v + 0.012, i, f"{v:.4f}",
+            v + 0.012, i, f"{v:.3f}",
             va="center", ha="left",
             fontsize=8.2,
             fontweight=label_weight,
@@ -157,7 +157,7 @@ def draw_balibase_panel(ax):
 
     ax.set_title("(D) BAliBASE", fontweight="bold", pad=6)
     ax.set_ylabel("SP-score")
-    ax.set_ylim(0, 1.10)
+    ax.set_ylim(0, 1.1)
     ax.set_yticks(np.linspace(0, 1.1, 6))
     ax.yaxis.set_major_formatter(FormatStrFormatter("%.1f"))
     ax.set_xticks(x)

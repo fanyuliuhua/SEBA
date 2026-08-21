@@ -1,5 +1,5 @@
 import numpy as np
-import cupy as cp
+# import cupy as cp
 from numba import njit,prange
 
 
@@ -63,28 +63,28 @@ def smooth_diag_numpy(similarity_matrix: np.ndarray, iter_num: int = 40) -> np.n
 
     return sim
 
-def smooth_diag_cupy(similarity_matrix, iter_num: int = 40, dtype=None):
-    # similarity_matrix 可以是 numpy 或 cupy 数组
-    sim = cp.asarray(similarity_matrix)
-    if dtype is not None:
-        sim = sim.astype(dtype, copy=False)
-
-    m, n = sim.shape
-    if m <= 1 or n <= 1 or iter_num <= 0:
-        return sim.copy()
-
-    out = cp.empty_like(sim)
-
-    cnt = cp.ones((m, n), dtype=cp.int8)
-    cnt[1:, 1:] += 1
-    cnt[:-1, :-1] += 1
-    inv_cnt = (1.0 / cnt).astype(sim.dtype)
-
-    for _ in range(iter_num):
-        out[...] = sim
-        out[1:, 1:] += sim[:-1, :-1]
-        out[:-1, :-1] += sim[1:, 1:]
-        out *= inv_cnt
-        sim, out = out, sim
-    sim=cp.asnumpy(sim)
-    return sim
+# def smooth_diag_cupy(similarity_matrix, iter_num: int = 40, dtype=None):
+#     # similarity_matrix 可以是 numpy 或 cupy 数组
+#     sim = cp.asarray(similarity_matrix)
+#     if dtype is not None:
+#         sim = sim.astype(dtype, copy=False)
+#
+#     m, n = sim.shape
+#     if m <= 1 or n <= 1 or iter_num <= 0:
+#         return sim.copy()
+#
+#     out = cp.empty_like(sim)
+#
+#     cnt = cp.ones((m, n), dtype=cp.int8)
+#     cnt[1:, 1:] += 1
+#     cnt[:-1, :-1] += 1
+#     inv_cnt = (1.0 / cnt).astype(sim.dtype)
+#
+#     for _ in range(iter_num):
+#         out[...] = sim
+#         out[1:, 1:] += sim[:-1, :-1]
+#         out[:-1, :-1] += sim[1:, 1:]
+#         out *= inv_cnt
+#         sim, out = out, sim
+#     sim=cp.asnumpy(sim)
+#     return sim
