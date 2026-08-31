@@ -104,3 +104,16 @@ SEBA was evaluated on six benchmark datasets covering remote-homology alignment,
 | **PISCES-derived** | A structural-similarity benchmark adopted from EBA. It contains 19,599 protein pairs with known structures, with a maximum pairwise sequence identity of 30% and a minimum chain length of 75 residues. | https://git.scicore.unibas.ch/schwede/eba_benchmark |
 | **HOMSTRAD** | An expert-curated database of structure-based alignments for homologous protein families. Following the EBA benchmark setting, 1,032 representative protein pairs were used. | https://git.scicore.unibas.ch/schwede/eba_benchmark |
 | **BAliBASE** | A reference multiple-sequence-alignment benchmark. Following the PEBA setting, five RV subsets (RV11, RV12, RV911, RV912, and RV913) were used, yielding 12,444 pairwise alignments. | https://github.com/mgtools/PEbA |
+
+## Protein Language Models
+
+The protein language models used in the experiments are publicly available from Hugging Face:
+
+| Model | Source |
+| --- | --- |
+| **ProstT5** | https://huggingface.co/Rostlab/ProstT5 |
+| **ProtT5** | https://huggingface.co/Rostlab/prot_t5_xl_uniref50 |
+| **ESM2-3B** | https://huggingface.co/facebook/esm2_t36_3B_UR50D |
+| **ESM-1B** | https://huggingface.co/facebook/esm1b_t33_650M_UR50S |
+
+Residue-level embeddings can be generated using the corresponding pretrained models and then provided to SEBA as input.
