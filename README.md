@@ -92,3 +92,15 @@ print(results['aln_1'])
 print(seqB)
 print(results['aln_2'])
 ```
+## Benchmark Datasets
+
+SEBA was evaluated on six benchmark datasets covering remote-homology alignment, structure-related similarity assessment, and reference-alignment evaluation.
+
+| Dataset | Description | Source |
+| --- | --- | --- |
+| **MALIDUP** | A manually curated benchmark containing 241 pairwise structural alignments of remote homologous duplicated domains. | http://prodata.swmed.edu/malidup |
+| **MALISAM** | A manually curated benchmark containing 130 pairwise alignments with substantial structural divergence and challenging near-analogy cases. | http://prodata.swmed.edu/malisam |
+| **SABMark** | A structure-based sequence-alignment benchmark covering diverse protein folds and difficult low-similarity protein pairs. The pairwise benchmark used in this study contains 8,952 protein pairs. | https://www.drive5.com/bench/ |
+| **PISCES-derived** | A structural-similarity benchmark adopted from EBA. It contains 19,599 protein pairs with known structures, with a maximum pairwise sequence identity of 30% and a minimum chain length of 75 residues. | https://git.scicore.unibas.ch/schwede/eba_benchmark |
+| **HOMSTRAD** | An expert-curated database of structure-based alignments for homologous protein families. Following the EBA benchmark setting, 1,032 representative protein pairs were used. | https://git.scicore.unibas.ch/schwede/eba_benchmark |
+| **BAliBASE** | A reference multiple-sequence-alignment benchmark. Following the PEBA setting, five RV subsets (RV11, RV12, RV911, RV912, and RV913) were used, yielding 12,444 pairwise alignments. | https://github.com/mgtools/PEbA |
