@@ -52,3 +52,43 @@ print(results['aln_1'])
 print(seqB)
 print(results['aln_2'])
 ```
+## Input and Output
+### Input
+SEBA requires two protein sequences and their corresponding residue-level embeddings.
+#### Protein sequences
+`SeqA.json` and `SeqB.json` contain the input protein sequences. Each file is stored as a JSON array containing one amino acid sequence string.
+Example:
+```json
+[
+  "TLKGQCIAEFLGTGLLIFFGVG..."
+]
+```
+### Output
+
+SEBA returns the alignment result as a Python dictionary. The residue correspondences for the two sequences are stored in:
+
+- `results['aln_1']`: alignment indices for sequence A.
+- `results['aln_2']`: alignment indices for sequence B.
+
+Both arrays have the same length and jointly define the pairwise alignment. Residue indices are **0-based**, and `-1` represents a gap introduced during alignment.
+
+For example:
+
+```text
+aln_1 = [-1, -1, 0, 1, 2, 3, 4, ...]
+aln_2 = [ 0,  1, 2, 3, 4, 5, 6, ...]
+```
+
+At each alignment position:
+
+- Two non-negative indices indicate an aligned residue pair.
+- An index of `-1` indicates a gap in the corresponding sequence.
+
+The alignment results can be inspected using:
+
+```python
+print(seqA)
+print(results['aln_1'])
+print(seqB)
+print(results['aln_2'])
+```
